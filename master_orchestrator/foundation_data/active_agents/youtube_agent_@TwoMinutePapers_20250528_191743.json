@@ -1,0 +1,20 @@
+{
+  "agent_id": "youtube_agent_@TwoMinutePapers_20250528_191743",
+  "type": "youtube_research_agent",
+  "target_channel": "https://www.youtube.com/@TwoMinutePapers",
+  "channel_name": "@TwoMinutePapers",
+  "status": "active",
+  "created_at": "2025-05-28T19:17:43.533442",
+  "last_analysis": "youtube_analysis_@TwoMinutePapers_2025-05-28T19-17-43.531637.json",
+  "monitoring": {
+    "check_interval": "1h",
+    "auto_analyze_new_videos": true,
+    "save_to_foundation": true
+  },
+  "metrics": {
+    "videos_analyzed": 10,
+    "papers_found": 3,
+    "concepts_extracted": 6,
+    "ideas_generated": 4
+  }
+}

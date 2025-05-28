@@ -1,0 +1,41 @@
+{
+  "channel_name": "@code4AI",
+  "channel_url": "https://www.youtube.com/@code4AI",
+  "total_videos": 2,
+  "videos": [],
+  "research_themes": [],
+  "top_concepts": [],
+  "project_recommendations": [
+    {
+      "title": "Multi-Agent Research System",
+      "description": "Build a system that automatically researches and implements AI concepts from video content",
+      "priority": "high",
+      "technologies": [
+        "LangChain",
+        "Vector Databases",
+        "LLMs"
+      ]
+    },
+    {
+      "title": "Knowledge Graph Builder",
+      "description": "Create a knowledge graph from research papers and video content",
+      "priority": "medium",
+      "technologies": [
+        "Neo4j",
+        "NLP",
+        "Graph Algorithms"
+      ]
+    },
+    {
+      "title": "Automated Literature Review",
+      "description": "System that automatically reviews and summarizes research papers",
+      "priority": "high",
+      "technologies": [
+        "ArXiv API",
+        "Transformers",
+        "Summarization"
+      ]
+    }
+  ],
+  "analysis_timestamp": "2025-05-28T19:03:42.673298"
+}

@@ -1,0 +1,245 @@
+{
+  "timestamp": "2025-05-28T19:17:43.533748",
+  "active_agents": [
+    {
+      "agent_id": "youtube_agent_@TwoMinutePapers_20250528_191743",
+      "type": "youtube_research_agent",
+      "target_channel": "https://www.youtube.com/@TwoMinutePapers",
+      "channel_name": "@TwoMinutePapers",
+      "status": "active",
+      "created_at": "2025-05-28T19:17:43.533442",
+      "last_analysis": "youtube_analysis_@TwoMinutePapers_2025-05-28T19-17-43.531637.json",
+      "monitoring": {
+        "check_interval": "1h",
+        "auto_analyze_new_videos": true,
+        "save_to_foundation": true
+      },
+      "metrics": {
+        "videos_analyzed": 10,
+        "papers_found": 3,
+        "concepts_extracted": 6,
+        "ideas_generated": 4
+      }
+    },
+    {
+      "agent_id": "youtube_agent_@code4AI_20250528_191713",
+      "type": "youtube_research_agent",
+      "target_channel": "https://www.youtube.com/@code4AI",
+      "channel_name": "@code4AI",
+      "status": "active",
+      "created_at": "2025-05-28T19:17:13.756230",
+      "last_analysis": "youtube_analysis_@code4AI_2025-05-28T19-17-13.755541.json",
+      "monitoring": {
+        "check_interval": "1h",
+        "auto_analyze_new_videos": true,
+        "save_to_foundation": true
+      },
+      "metrics": {
+        "videos_analyzed": 0,
+        "papers_found": 0,
+        "concepts_extracted": 0,
+        "ideas_generated": 0
+      }
+    }
+  ],
+  "recent_analyses": [
+    {
+      "filename": "youtube_analysis_@TwoMinutePapers_2025-05-28T19-17-43.531637.json",
+      "timestamp": "2025-05-28T19:17:43.531637",
+      "channel": "@TwoMinutePapers",
+      "videos_analyzed": 10,
+      "insights": {
+        "research_themes": [
+          "Retrieval Systems"
+        ],
+        "top_concepts": [
+          "rag",
+          "neural network",
+          "gpt",
+          "openai",
+          "anthropic",
+          "reinforcement learning"
+        ],
+        "project_recommendations": [
+          {
+            "title": "Multi-Agent Research System",
+            "description": "Build a system that automatically researches and implements AI concepts from video content",
+            "priority": "high",
+            "technologies": [
+              "LangChain",
+              "Vector Databases",
+              "LLMs"
+            ]
+          },
+          {
+            "title": "Knowledge Graph Builder",
+            "description": "Create a knowledge graph from research papers and video content",
+            "priority": "medium",
+            "technologies": [
+              "Neo4j",
+              "NLP",
+              "Graph Algorithms"
+            ]
+          },
+          {
+            "title": "Automated Literature Review",
+            "description": "System that automatically reviews and summarizes research papers",
+            "priority": "high",
+            "technologies": [
+              "ArXiv API",
+              "Transformers",
+              "Summarization"
+            ]
+          }
+        ],
+        "paper_count": 3,
+        "concept_diversity": 6
+      }
+    },
+    {
+      "filename": "youtube_analysis_@code4AI_2025-05-28T19-17-13.755541.json",
+      "timestamp": "2025-05-28T19:17:13.755541",
+      "channel": "@code4AI",
+      "videos_analyzed": 0,
+      "insights": {
+        "research_themes": [],
+        "top_concepts": [],
+        "project_recommendations": [
+          {
+            "title": "Multi-Agent Research System",
+            "description": "Build a system that automatically researches and implements AI concepts from video content",
+            "priority": "high",
+            "technologies": [
+              "LangChain",
+              "Vector Databases",
+              "LLMs"
+            ]
+          },
+          {
+            "title": "Knowledge Graph Builder",
+            "description": "Create a knowledge graph from research papers and video content",
+            "priority": "medium",
+            "technologies": [
+              "Neo4j",
+              "NLP",
+              "Graph Algorithms"
+            ]
+          },
+          {
+            "title": "Automated Literature Review",
+            "description": "System that automatically reviews and summarizes research papers",
+            "priority": "high",
+            "technologies": [
+              "ArXiv API",
+              "Transformers",
+              "Summarization"
+            ]
+          }
+        ],
+        "paper_count": 0,
+        "concept_diversity": 0
+      }
+    }
+  ],
+  "system_metrics": {},
+  "actionable_items": [
+    {
+      "type": "research_implementation",
+      "title": "Implement Research Papers",
+      "description": "Implement 3 research papers found in videos",
+      "priority": "high",
+      "estimated_effort": "4-6 weeks",
+      "resources_needed": [
+        "GPU compute",
+        "Development environment",
+        "Research access"
+      ],
+      "papers": [
+        {
+          "type": "mentioned",
+          "title": "GENMO: A GENeralist Model for Human MOtion",
+          "context": "mentioned in video",
+          "source": "video_content"
+        },
+        {
+          "type": "mentioned",
+          "title": "3DGUT: Enabling Distorted Cameras and Secondary Rays in Gaussian Splatting",
+          "context": "mentioned in video",
+          "source": "video_content"
+        },
+        {
+          "type": "mentioned",
+          "title": "Humanity's Last Exam",
+          "context": "mentioned in video",
+          "source": "video_content"
+        }
+      ]
+    },
+    {
+      "type": "concept_exploration",
+      "title": "Deep Dive into Top Concepts",
+      "description": "Explore and implement projects around rag, neural network, gpt, openai, anthropic",
+      "priority": "medium",
+      "estimated_effort": "2-3 weeks",
+      "concepts": [
+        [
+          "rag",
+          2
+        ],
+        [
+          "neural network",
+          2
+        ],
+        [
+          "gpt",
+          2
+        ],
+        [
+          "openai",
+          2
+        ],
+        [
+          "anthropic",
+          1
+        ]
+      ]
+    },
+    {
+      "type": "implementation_projects",
+      "title": "Execute Implementation Ideas",
+      "description": "Execute 4 implementation ideas generated from videos",
+      "priority": "high",
+      "estimated_effort": "8-12 weeks",
+      "ideas": [
+        {
+          "type": "rag_system",
+          "title": "RAG System Implementation",
+          "description": "Build a retrieval-augmented generation system",
+          "complexity": "medium",
+          "estimated_time": "2-3 weeks"
+        },
+        {
+          "type": "model_implementation",
+          "title": "Transformer Model Implementation",
+          "description": "Build a custom transformer model for specific use case",
+          "complexity": "high",
+          "estimated_time": "3-4 weeks"
+        },
+        {
+          "type": "model_implementation",
+          "title": "Transformer Model Implementation",
+          "description": "Build a custom transformer model for specific use case",
+          "complexity": "high",
+          "estimated_time": "3-4 weeks"
+        },
+        {
+          "type": "rag_system",
+          "title": "RAG System Implementation",
+          "description": "Build a retrieval-augmented generation system",
+          "complexity": "medium",
+          "estimated_time": "2-3 weeks"
+        }
+      ]
+    }
+  ]
+}

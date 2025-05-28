@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "type": "youtube_channel",
+    "timestamp": "2025-05-28T19:17:13.755541",
+    "channel": "@code4AI",
+    "source": "https://www.youtube.com/@code4AI",
+    "analyzer_version": "1.0",
+    "total_videos": 2,
+    "analyzed_videos": 0
+  },
+  "analysis": {
+    "channel_name": "@code4AI",
+    "channel_url": "https://www.youtube.com/@code4AI",
+    "total_videos": 2,
+    "videos": [],
+    "research_themes": [],
+    "top_concepts": [],
+    "project_recommendations": [
+      {
+        "title": "Multi-Agent Research System",
+        "description": "Build a system that automatically researches and implements AI concepts from video content",
+        "priority": "high",
+        "technologies": [
+          "LangChain",
+          "Vector Databases",
+          "LLMs"
+        ]
+      },
+      {
+        "title": "Knowledge Graph Builder",
+        "description": "Create a knowledge graph from research papers and video content",
+        "priority": "medium",
+        "technologies": [
+          "Neo4j",
+          "NLP",
+          "Graph Algorithms"
+        ]
+      },
+      {
+        "title": "Automated Literature Review",
+        "description": "System that automatically reviews and summarizes research papers",
+        "priority": "high",
+        "technologies": [
+          "ArXiv API",
+          "Transformers",
+          "Summarization"
+        ]
+      }
+    ],
+    "analysis_timestamp": "2025-05-28T19:17:13.755525"
+  },
+  "insights": {
+    "research_themes": [],
+    "top_concepts": [],
+    "project_recommendations": [
+      {
+        "title": "Multi-Agent Research System",
+        "description": "Build a system that automatically researches and implements AI concepts from video content",
+        "priority": "high",
+        "technologies": [
+          "LangChain",
+          "Vector Databases",
+          "LLMs"
+        ]
+      },
+      {
+        "title": "Knowledge Graph Builder",
+        "description": "Create a knowledge graph from research papers and video content",
+        "priority": "medium",
+        "technologies": [
+          "Neo4j",
+          "NLP",
+          "Graph Algorithms"
+        ]
+      },
+      {
+        "title": "Automated Literature Review",
+        "description": "System that automatically reviews and summarizes research papers",
+        "priority": "high",
+        "technologies": [
+          "ArXiv API",
+          "Transformers",
+          "Summarization"
+        ]
+      }
+    ],
+    "paper_count": 0,
+    "concept_diversity": 0
+  },
+  "actionable_items": []
+}

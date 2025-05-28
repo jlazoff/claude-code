@@ -1,0 +1,20 @@
+{
+  "agent_id": "youtube_agent_@code4AI_20250528_191713",
+  "type": "youtube_research_agent",
+  "target_channel": "https://www.youtube.com/@code4AI",
+  "channel_name": "@code4AI",
+  "status": "active",
+  "created_at": "2025-05-28T19:17:13.756230",
+  "last_analysis": "youtube_analysis_@code4AI_2025-05-28T19-17-13.755541.json",
+  "monitoring": {
+    "check_interval": "1h",
+    "auto_analyze_new_videos": true,
+    "save_to_foundation": true
+  },
+  "metrics": {
+    "videos_analyzed": 0,
+    "papers_found": 0,
+    "concepts_extracted": 0,
+    "ideas_generated": 0
+  }
+}

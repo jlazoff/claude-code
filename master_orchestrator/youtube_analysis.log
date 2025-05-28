@@ -1,0 +1,97 @@
+2025-05-28 19:03:40,215 - __main__ - INFO - YouTube analyzer initialized successfully
+2025-05-28 19:03:40,215 - __main__ - INFO - Starting channel analysis: https://www.youtube.com/@code4AI
+2025-05-28 19:03:40,215 - __main__ - INFO - Extracting videos from channel: https://www.youtube.com/@code4AI
+2025-05-28 19:03:41,535 - __main__ - INFO - Found 2 videos in channel
+2025-05-28 19:03:41,536 - __main__ - INFO - Processing video 1/2: Discover AI - Videos
+2025-05-28 19:03:41,536 - __main__ - INFO - Analyzing video: UCfOvNb3xj28SNqPQ_JIbumg
+2025-05-28 19:03:42,154 - __main__ - ERROR - Error getting video details for UCfOvNb3xj28SNqPQ_JIbumg: ERROR: [youtube] UCfOvNb3xj2: Video unavailable
+2025-05-28 19:03:42,154 - __main__ - INFO - Processing video 2/2: Discover AI - Shorts
+2025-05-28 19:03:42,154 - __main__ - INFO - Analyzing video: UCfOvNb3xj28SNqPQ_JIbumg
+2025-05-28 19:03:42,673 - __main__ - ERROR - Error getting video details for UCfOvNb3xj28SNqPQ_JIbumg: ERROR: [youtube] UCfOvNb3xj2: Video unavailable
+2025-05-28 19:03:42,673 - __main__ - INFO - Analysis results saved to: youtube_analysis_results/channel_analysis_@code4AI_20250528_190342.json
+2025-05-28 19:04:14,535 - __main__ - INFO - YouTube analyzer initialized successfully
+2025-05-28 19:04:14,535 - __main__ - INFO - Starting channel analysis: https://www.youtube.com/@code4AI
+2025-05-28 19:04:14,535 - __main__ - INFO - Extracting videos from channel: https://www.youtube.com/@code4AI
+2025-05-28 19:04:14,567 - __main__ - INFO - Trying URL: https://www.youtube.com/@code4AI
+2025-05-28 19:04:17,663 - __main__ - INFO - Found 2 videos in channel using https://www.youtube.com/@code4AI
+2025-05-28 19:04:17,664 - __main__ - INFO - Processing video 1/2: Discover AI - Videos
+2025-05-28 19:04:17,664 - __main__ - INFO - Analyzing video: UCfOvNb3xj28SNqPQ_JIbumg
+2025-05-28 19:04:18,453 - __main__ - ERROR - Error getting video details for UCfOvNb3xj28SNqPQ_JIbumg: ERROR: [youtube] UCfOvNb3xj2: Video unavailable
+2025-05-28 19:04:18,454 - __main__ - INFO - Processing video 2/2: Discover AI - Shorts
+2025-05-28 19:04:18,454 - __main__ - INFO - Analyzing video: UCfOvNb3xj28SNqPQ_JIbumg
+2025-05-28 19:04:19,094 - __main__ - ERROR - Error getting video details for UCfOvNb3xj28SNqPQ_JIbumg: ERROR: [youtube] UCfOvNb3xj2: Video unavailable
+2025-05-28 19:04:19,094 - __main__ - INFO - Starting channel analysis: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:04:19,094 - __main__ - INFO - Extracting videos from channel: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:04:19,125 - __main__ - INFO - Trying URL: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:04:20,207 - __main__ - INFO - Found 100 videos in channel using https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:04:20,207 - __main__ - INFO - Processing video 1/10: NVIDIA’s New AI: Impossible Weather Graphics!
+2025-05-28 19:04:20,207 - __main__ - INFO - Analyzing video: ZE0JZYgiaGc
+2025-05-28 19:04:24,456 - __main__ - INFO - Processing video 2/10: DeepMind’s Veo3 AI - The New King Is Here!
+2025-05-28 19:04:24,456 - __main__ - INFO - Analyzing video: Pqx-gSiogjM
+2025-05-28 19:04:27,861 - __main__ - INFO - Processing video 3/10: DeepMind’s AlphaEvolve AI: History In The Making!
+2025-05-28 19:04:27,862 - __main__ - INFO - Analyzing video: T0eWBlFhFzc
+2025-05-28 19:04:31,585 - __main__ - INFO - Processing video 4/10: New AI: Impossible Creatures Come Alive!
+2025-05-28 19:04:31,585 - __main__ - INFO - Analyzing video: g32Candon3A
+2025-05-28 19:04:35,804 - __main__ - INFO - Processing video 5/10: NVIDIA’s New AI: Impossible Video Game Animations!
+2025-05-28 19:04:35,804 - __main__ - INFO - Analyzing video: 7EA5JM1DI9Y
+2025-05-28 19:04:39,063 - __main__ - INFO - Processing video 6/10: OpenAI’s ChatGPT Surprised Even Its Creators!
+2025-05-28 19:04:39,063 - __main__ - INFO - Analyzing video: tj3l1BGkRJI
+2025-05-28 19:04:42,038 - __main__ - INFO - Processing video 7/10: Blender 4.4 Is Here - Stunning Power…For Free!
+2025-05-28 19:04:42,038 - __main__ - INFO - Analyzing video: rSUdTAw53Mc
+2025-05-28 19:04:44,928 - __main__ - INFO - Processing video 8/10: NVIDIA’s New AI: Impossible Ray Tracing!
+2025-05-28 19:04:44,928 - __main__ - INFO - Analyzing video: hUVfAVjsfL4
+2025-05-28 19:04:48,492 - __main__ - INFO - Processing video 9/10: OpenAI’s ChatGPT o3 - Pushing Humanity Forward!
+2025-05-28 19:04:48,492 - __main__ - INFO - Analyzing video: pC8wRC-1PmQ
+2025-05-28 19:04:51,635 - __main__ - WARNING - Could not get transcript for pC8wRC-1PmQ: no element found: line 1, column 0
+2025-05-28 19:04:51,635 - __main__ - INFO - Processing video 10/10: NVIDIA’s Tech: Brutal 2,500,000 Part Simulation!
+2025-05-28 19:04:51,635 - __main__ - INFO - Analyzing video: wq8BgIfOxnk
+2025-05-28 19:04:55,164 - __main__ - INFO - Analysis results saved to: youtube_analysis_results/channel_analysis_@TwoMinutePapers_20250528_190455.json
+2025-05-28 19:17:09,380 - apache_beam.io.gcp.bigquery - INFO - No module named google.cloud.bigquery_storage_v1. As a result, the ReadFromBigQuery transform *CANNOT* be used with `method=DIRECT_READ`.
+2025-05-28 19:17:09,783 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-05-28 19:17:10,870 - simple_youtube_analyzer - INFO - YouTube analyzer initialized successfully
+2025-05-28 19:17:10,871 - __main__ - INFO - YouTube Agent Launcher initialized
+2025-05-28 19:17:10,871 - __main__ - INFO - ✅ SecureConfigManager initialized
+2025-05-28 19:17:10,871 - __main__ - INFO - ✅ Knowledge Orchestrator initialized
+2025-05-28 19:17:10,871 - __main__ - INFO - ✅ Enterprise Agent Ecosystem initialized
+2025-05-28 19:17:10,871 - __main__ - INFO - 🚀 Launching YouTube agent for: https://www.youtube.com/@code4AI
+2025-05-28 19:17:10,871 - simple_youtube_analyzer - INFO - Starting channel analysis: https://www.youtube.com/@code4AI
+2025-05-28 19:17:10,871 - simple_youtube_analyzer - INFO - Extracting videos from channel: https://www.youtube.com/@code4AI
+2025-05-28 19:17:10,903 - simple_youtube_analyzer - INFO - Trying URL: https://www.youtube.com/@code4AI
+2025-05-28 19:17:12,603 - simple_youtube_analyzer - INFO - Found 2 videos in channel using https://www.youtube.com/@code4AI
+2025-05-28 19:17:12,604 - simple_youtube_analyzer - INFO - Processing video 1/2: Discover AI - Videos
+2025-05-28 19:17:12,604 - simple_youtube_analyzer - INFO - Analyzing video: UCfOvNb3xj28SNqPQ_JIbumg
+2025-05-28 19:17:13,217 - simple_youtube_analyzer - ERROR - Error getting video details for UCfOvNb3xj28SNqPQ_JIbumg: ERROR: [youtube] UCfOvNb3xj2: Video unavailable
+2025-05-28 19:17:13,218 - simple_youtube_analyzer - INFO - Processing video 2/2: Discover AI - Shorts
+2025-05-28 19:17:13,218 - simple_youtube_analyzer - INFO - Analyzing video: UCfOvNb3xj28SNqPQ_JIbumg
+2025-05-28 19:17:13,755 - simple_youtube_analyzer - ERROR - Error getting video details for UCfOvNb3xj28SNqPQ_JIbumg: ERROR: [youtube] UCfOvNb3xj2: Video unavailable
+2025-05-28 19:17:13,756 - __main__ - INFO - Analysis saved to foundation: foundation_data/youtube_analysis/youtube_analysis_@code4AI_2025-05-28T19-17-13.755541.json
+2025-05-28 19:17:13,756 - __main__ - INFO - ✅ YouTube agent deployed: youtube_agent_@code4AI_20250528_191713
+2025-05-28 19:17:13,756 - __main__ - INFO - 🚀 Launching YouTube agent for: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:17:13,756 - simple_youtube_analyzer - INFO - Starting channel analysis: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:17:13,756 - simple_youtube_analyzer - INFO - Extracting videos from channel: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:17:13,791 - simple_youtube_analyzer - INFO - Trying URL: https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:17:14,686 - simple_youtube_analyzer - INFO - Found 100 videos in channel using https://www.youtube.com/@TwoMinutePapers
+2025-05-28 19:17:14,687 - simple_youtube_analyzer - INFO - Processing video 1/10: NVIDIA’s New AI: Impossible Weather Graphics!
+2025-05-28 19:17:14,687 - simple_youtube_analyzer - INFO - Analyzing video: ZE0JZYgiaGc
+2025-05-28 19:17:17,648 - simple_youtube_analyzer - INFO - Processing video 2/10: DeepMind’s Veo3 AI - The New King Is Here!
+2025-05-28 19:17:17,649 - simple_youtube_analyzer - INFO - Analyzing video: Pqx-gSiogjM
+2025-05-28 19:17:20,480 - simple_youtube_analyzer - INFO - Processing video 3/10: DeepMind’s AlphaEvolve AI: History In The Making!
+2025-05-28 19:17:20,480 - simple_youtube_analyzer - INFO - Analyzing video: T0eWBlFhFzc
+2025-05-28 19:17:23,197 - simple_youtube_analyzer - INFO - Processing video 4/10: New AI: Impossible Creatures Come Alive!
+2025-05-28 19:17:23,198 - simple_youtube_analyzer - INFO - Analyzing video: g32Candon3A
+2025-05-28 19:17:25,962 - simple_youtube_analyzer - WARNING - Could not get transcript for g32Candon3A: no element found: line 1, column 0
+2025-05-28 19:17:25,962 - simple_youtube_analyzer - INFO - Processing video 5/10: NVIDIA’s New AI: Impossible Video Game Animations!
+2025-05-28 19:17:25,962 - simple_youtube_analyzer - INFO - Analyzing video: 7EA5JM1DI9Y
+2025-05-28 19:17:28,589 - simple_youtube_analyzer - WARNING - Could not get transcript for 7EA5JM1DI9Y: no element found: line 1, column 0
+2025-05-28 19:17:28,590 - simple_youtube_analyzer - INFO - Processing video 6/10: OpenAI’s ChatGPT Surprised Even Its Creators!
+2025-05-28 19:17:28,590 - simple_youtube_analyzer - INFO - Analyzing video: tj3l1BGkRJI
+2025-05-28 19:17:31,576 - simple_youtube_analyzer - INFO - Processing video 7/10: Blender 4.4 Is Here - Stunning Power…For Free!
+2025-05-28 19:17:31,576 - simple_youtube_analyzer - INFO - Analyzing video: rSUdTAw53Mc
+2025-05-28 19:17:34,616 - simple_youtube_analyzer - INFO - Processing video 8/10: NVIDIA’s New AI: Impossible Ray Tracing!
+2025-05-28 19:17:34,616 - simple_youtube_analyzer - INFO - Analyzing video: hUVfAVjsfL4
+2025-05-28 19:17:37,702 - simple_youtube_analyzer - INFO - Processing video 9/10: OpenAI’s ChatGPT o3 - Pushing Humanity Forward!
+2025-05-28 19:17:37,702 - simple_youtube_analyzer - INFO - Analyzing video: pC8wRC-1PmQ
+2025-05-28 19:17:40,472 - simple_youtube_analyzer - INFO - Processing video 10/10: NVIDIA’s Tech: Brutal 2,500,000 Part Simulation!
+2025-05-28 19:17:40,472 - simple_youtube_analyzer - INFO - Analyzing video: wq8BgIfOxnk
+2025-05-28 19:17:43,533 - __main__ - INFO - Analysis saved to foundation: foundation_data/youtube_analysis/youtube_analysis_@TwoMinutePapers_2025-05-28T19-17-43.531637.json
+2025-05-28 19:17:43,533 - __main__ - INFO - ✅ YouTube agent deployed: youtube_agent_@TwoMinutePapers_20250528_191743

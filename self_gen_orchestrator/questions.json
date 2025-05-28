@@ -1,0 +1,11 @@
+[
+  {
+    "id": "example1",
+    "question": "Which database should be primary?",
+    "reason": "We need high performance and graph capabilities.",
+    "data": {
+      "candidates": ["ArangoDB", "Neo4J", "Titan"]
+    },
+    "options": ["ArangoDB", "Neo4J", "Titan"]
+  }
+]

@@ -1,0 +1,153 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.11]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install black isort ruff mypy pytest pytest-asyncio pytest-cov
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f pyproject.toml ]; then pip install -e .; fi
+        
+    - name: Lint with ruff
+      run: |
+        ruff check . --output-format=github
+        
+    - name: Format check with black
+      run: |
+        black --check --diff .
+        
+    - name: Import sorting check with isort
+      run: |
+        isort --check-only --diff .
+        
+    - name: Type checking with mypy
+      run: |
+        mypy . --ignore-missing-imports
+        
+    - name: Test with pytest
+      run: |
+        pytest --cov=master_orchestrator --cov-report=xml --cov-report=html
+        
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+        
+    - name: Install security tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit safety
+        
+    - name: Run Bandit security scan
+      run: |
+        bandit -r . -f json -o bandit-report.json
+        
+    - name: Run Safety check
+      run: |
+        safety check --json --output safety-report.json
+        
+    - name: Upload security reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-reports
+        path: |
+          bandit-report.json
+          safety-report.json
+
+  build-and-deploy:
+    needs: [lint-and-test, security-scan]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+        
+    - name: Build package
+      run: |
+        python -m pip install --upgrade pip build
+        python -m build
+        
+    - name: Build Docker image
+      run: |
+        docker build -t master-orchestrator:latest .
+        
+    - name: Run integration tests
+      run: |
+        docker run --rm master-orchestrator:latest python -m pytest tests/integration/
+        
+    - name: Deploy to staging
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        echo "Deploying to staging environment..."
+        # Add actual deployment commands here
+        
+  performance-test:
+    needs: [lint-and-test]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install locust pytest-benchmark
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+    - name: Run performance tests
+      run: |
+        python -m pytest tests/performance/ --benchmark-only
+        
+    - name: Run load tests
+      run: |
+        locust --config tests/performance/locust.conf
