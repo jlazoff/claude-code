@@ -1,0 +1,105 @@
+# Master Orchestrator Configuration Example
+# Copy this to config.yaml and customize for your environment
+
+# Basic settings
+name: "master-orchestrator"
+version: "0.1.0"
+environment: "development"  # development, staging, production
+
+# API server configuration
+api_host: "0.0.0.0"
+api_port: 8000
+api_workers: 4
+
+# Security settings
+secret_key: "your-secret-key-change-this-in-production"
+allowed_hosts:
+  - "localhost"
+  - "127.0.0.1"
+  - "your-domain.com"
+
+# ArangoDB configuration
+arangodb_config:
+  host: "localhost"
+  port: 8529
+  username: "root"
+  password: "orchestrator123"
+  database: "master_orchestrator"
+  protocol: "http"
+
+# Agent framework configuration
+agent_config:
+  max_concurrent_agents: 10
+  default_timeout: 300
+  retry_attempts: 3
+  dspy_cache_dir: "~/.cache/dspy"
+  
+  # LLM providers configuration
+  llm_providers:
+    - name: "openai"
+      api_key: "${OPENAI_API_KEY}"
+      model: "gpt-4"
+      max_tokens: 4096
+      temperature: 0.7
+      enabled: true
+    
+    - name: "anthropic"
+      api_key: "${ANTHROPIC_API_KEY}"
+      model: "claude-3-sonnet-20241022"
+      max_tokens: 4096
+      temperature: 0.7
+      enabled: true
+    
+    - name: "google"
+      api_key: "${GOOGLE_API_KEY}"
+      model: "gemini-pro"
+      max_tokens: 4096
+      temperature: 0.7
+      enabled: true
+
+# Infrastructure configuration
+infrastructure_config:
+  kubernetes_config_path: null  # Path to kubeconfig if different from default
+  docker_host: "unix:///var/run/docker.sock"
+  terraform_dir: "./infrastructure/terraform"
+  ansible_dir: "./infrastructure/ansible"
+  
+  # Hardware nodes configuration
+  mac_studios:
+    - "192.168.1.10"  # IP address of first Mac Studio
+    - "192.168.1.11"  # IP address of second Mac Studio
+  
+  mac_minis:
+    - "192.168.1.20"  # IP address of first Mac Mini
+    - "192.168.1.21"  # IP address of second Mac Mini
+  
+  nas_systems:
+    - "192.168.1.30"  # Synology NAS
+    - "192.168.1.31"  # Asustor NAS
+
+# Repository management configuration
+repository_config:
+  github_base_path: "/Users/jlazoff/Documents/GitHub"
+  auto_sync: true
+  sync_interval: 3600  # seconds (1 hour)
+  analysis_depth: "medium"  # shallow, medium, deep
+
+# Monitoring and observability
+monitoring_config:
+  prometheus_port: 9090
+  grafana_port: 3000
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  metrics_enabled: true
+  tracing_enabled: true
+
+# Environment variables that can override config
+# Set these in your environment:
+#
+# ORCHESTRATOR_NAME=my-orchestrator
+# ORCHESTRATOR_ENVIRONMENT=production
+# ARANGODB_HOST=your-arangodb-host
+# ARANGODB_PASSWORD=your-secure-password
+# OPENAI_API_KEY=your-openai-key
+# ANTHROPIC_API_KEY=your-anthropic-key
+# GOOGLE_API_KEY=your-google-key
+# SECRET_KEY=your-production-secret-key

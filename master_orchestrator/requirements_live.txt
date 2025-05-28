@@ -1,0 +1,21 @@
+# Live Server Requirements
+websockets>=12.0
+watchdog>=3.0.0
+asyncio-mqtt>=0.13.0
+aiofiles>=23.0.0
+
+# Core dependencies
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+structlog>=23.0.0
+
+# File watching
+watchdog>=3.0.0
+
+# WebSocket support
+websockets>=12.0
+
+# Optional dependencies for enhanced functionality
+aiohttp>=3.9.0
+python-multipart>=0.0.6

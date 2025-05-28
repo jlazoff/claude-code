@@ -1,0 +1,20 @@
+🚀 Master Orchestrator - Simple HTTP Server
+==================================================
+🌐 Dashboard: http://localhost:8000
+📊 API Status: http://localhost:8000/api/status
+📁 Repositories: http://localhost:8000/api/repositories
+🛑 Press Ctrl+C to stop
+==================================================
+Traceback (most recent call last):
+  File "/Users/jlazoff/Documents/GitHub/claude-code/master_orchestrator/simple_server.py", line 353, in <module>
+    run_server()
+  File "/Users/jlazoff/Documents/GitHub/claude-code/master_orchestrator/simple_server.py", line 345, in run_server
+    httpd = HTTPServer(server_address, MasterOrchestratorHandler)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use

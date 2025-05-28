@@ -1,0 +1,209 @@
+# Docker Compose for Master Orchestrator Infrastructure
+# Provides a complete infrastructure stack for development and testing
+
+version: '3.8'
+
+services:
+  # ArangoDB - Knowledge Graph Database
+  arangodb:
+    image: arangodb/arangodb:latest
+    container_name: master-orchestrator-arangodb
+    environment:
+      - ARANGO_ROOT_PASSWORD=orchestrator123
+      - ARANGO_NO_AUTH=0
+    ports:
+      - "8529:8529"
+    volumes:
+      - arangodb_data:/var/lib/arangodb3
+      - arangodb_apps:/var/lib/arangodb3-apps
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8529/_api/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Prometheus - Metrics Collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: master-orchestrator-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+
+  # Grafana - Metrics Visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: master-orchestrator-grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=orchestrator123
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  # Redis - Task Queue and Caching
+  redis:
+    image: redis:alpine
+    container_name: master-orchestrator-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Airflow - Workflow Orchestration
+  airflow-webserver:
+    image: apache/airflow:2.7.0
+    container_name: master-orchestrator-airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=''
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
+      - AIRFLOW__CORE__LOAD_EXAMPLES=false
+      - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    ports:
+      - "8080:8080"
+    networks:
+      - orchestrator-network
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  # PostgreSQL - Airflow Backend
+  postgres:
+    image: postgres:13
+    container_name: master-orchestrator-postgres
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+
+  # vLLM - Local LLM Serving
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: master-orchestrator-vllm
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/models
+    environment:
+      - MODEL_NAME=microsoft/DialoGPT-medium
+    command: --model /models/model --port 8000
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+    # Uncomment if you have GPU support
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=all
+
+  # Ray Head Node - Distributed Computing
+  ray-head:
+    image: rayproject/ray:latest
+    container_name: master-orchestrator-ray-head
+    ports:
+      - "8265:8265"
+      - "10001:10001"
+    volumes:
+      - ./ray_results:/tmp/ray
+    command: ray start --head --dashboard-host=0.0.0.0 --dashboard-port=8265 --port=10001 --block
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+
+  # Jupyter Lab - Development Environment
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    container_name: master-orchestrator-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=orchestrator123
+    networks:
+      - orchestrator-network
+    restart: unless-stopped
+
+  # Master Orchestrator API
+  master-orchestrator:
+    build: .
+    container_name: master-orchestrator-api
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - ORCHESTRATOR_ENVIRONMENT=docker
+      - ARANGODB_HOST=arangodb
+      - REDIS_HOST=redis
+    networks:
+      - orchestrator-network
+    depends_on:
+      - arangodb
+      - redis
+      - prometheus
+    restart: unless-stopped
+
+# Volumes for persistent data
+volumes:
+  arangodb_data:
+    driver: local
+  arangodb_apps:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  redis_data:
+    driver: local
+  postgres_data:
+    driver: local
+
+# Network for service communication
+networks:
+  orchestrator-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

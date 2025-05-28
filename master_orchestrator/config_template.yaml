@@ -1,0 +1,58 @@
+api_keys:
+  anthropic_api_key: null
+  arangodb_endpoint: http://localhost:8529
+  arangodb_password: null
+  arangodb_username: root
+  aws_access_key_id: null
+  aws_region: us-west-2
+  aws_secret_access_key: null
+  azure_client_id: null
+  azure_client_secret: null
+  azure_subscription_id: null
+  azure_tenant_id: null
+  brave_api_key: null
+  chroma_endpoint: http://localhost:8000
+  cloudflare_api_key: null
+  cloudflare_zone_id: null
+  cohere_api_key: null
+  discord_bot_token: null
+  docker_registry_password: null
+  docker_registry_url: null
+  docker_registry_username: null
+  gcp_credentials_path: null
+  gemini_api_key: null
+  github_token: null
+  gitlab_token: null
+  grafana_api_key: null
+  grafana_endpoint: http://localhost:3000
+  iceberg_endpoint: http://localhost:8080
+  jira_api_key: null
+  kubernetes_config_path: null
+  localai_endpoint: http://localhost:8080
+  mistral_api_key: null
+  nas_endpoint: null
+  nas_password: null
+  nas_username: null
+  neo4j_endpoint: bolt://localhost:7687
+  neo4j_password: null
+  neo4j_username: neo4j
+  ollama_endpoint: http://localhost:11434
+  openai_api_key: null
+  pinecone_api_key: null
+  prometheus_endpoint: http://localhost:9090
+  qdrant_endpoint: http://localhost:6333
+  serper_api_key: null
+  slack_bot_token: null
+  tavily_api_key: null
+  triton_endpoint: http://localhost:8000
+  vllm_endpoint: http://localhost:8080
+  weaviate_endpoint: http://localhost:8080
+  wolfram_alpha_api_key: null
+environments:
+  development:
+    database_urls:
+      arangodb: http://localhost:8529
+      postgres: postgresql://localhost:5432/orchestrator_dev
+    description: Local development environment
+    service_endpoints:
+      orchestrator_api: http://localhost:8000
