@@ -19,3 +19,31 @@ This CLI loads a list of decision questions and interactively prompts the user t
    ```bash
    self-gen-orchestrator run --questions-file questions.json --output-file decisions.json
    ```
+
+## Frontend Project Map
+
+This project integrates the AG-UI Dojo frontend to visualize the project mind map generated from your ChatGPT conversations.
+
+1. Create a symlink to the AG-UI Dojo app (assumes `ag-ui` repo is alongside this repo):
+
+   ```bash
+   ln -s ../../ag-ui/dojo self_gen_orchestrator/frontend
+   ```
+
+2. Generate the projects JSON from your ChatGPT export:
+
+   ```bash
+   python3 scripts/digest_chatgpt_map.py \
+     --json-path ~/Downloads/conversations.json \
+     --projects-output self_gen_orchestrator/frontend/public/projects.json
+   ```
+
+3. Start the AG-UI frontend:
+
+   ```bash
+   cd self_gen_orchestrator/frontend
+   pnpm install
+   pnpm dev
+   ```
+
+The frontend will be available at http://localhost:3000 and will display the mind map of projects.
