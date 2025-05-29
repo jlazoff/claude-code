@@ -24,11 +24,7 @@ This CLI loads a list of decision questions and interactively prompts the user t
 
 This project integrates the AG-UI Dojo frontend to visualize the project mind map generated from your ChatGPT conversations.
 
-1. Create a symlink to the AG-UI Dojo app (assumes `ag-ui` repo is alongside this repo):
-
-   ```bash
-   ln -s ../../ag-ui/dojo self_gen_orchestrator/frontend
-   ```
+1. The AG-UI Dojo frontend is included here under `self_gen_orchestrator/frontend`.
 
 2. Generate the projects JSON from your ChatGPT export:
 
