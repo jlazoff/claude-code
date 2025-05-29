@@ -49,6 +49,10 @@ def main():
         '--output',
         help='Path to write Markdown report (defaults to stdout)'
     )
+    parser.add_argument(
+        '--projects-output',
+        help='Path to dump deduplicated project items as JSON'
+    )
     args = parser.parse_args()
 
     # Load ChatGPT conversation export
@@ -146,6 +150,15 @@ def main():
         print(f'Report written to {args.output}')
     else:
         print(report)
+
+    # Dump projects list for frontend consumption
+    if args.projects_output:
+        proj_list = sorted(project_items)
+        out_path = args.projects_output
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        with open(out_path, 'w', encoding='utf-8') as f:
+            json.dump(proj_list, f, indent=2, ensure_ascii=False)
+        print(f'Projects JSON written to {out_path}')
 
 
 if __name__ == '__main__':
